@@ -17,7 +17,9 @@ class Sheet:
         file_rd = xlrd.open_workbook(self.path)
         sheet = file_rd.sheet_by_index(0)
         for i in range(1, sheet.nrows):
-            string = "{} {} rate my professor".format(sheet.cell_value(i,1), self.school_name)
+            a = sheet.cell_value(i,1).split(", ")
+            string = "{} {} {} rate my professor".format(a[1], a[0], self.school_name)
+            # string = "{} {} rate my professor".format(sheet.cell_value(i,1), self.school_name)
             found = False
             for j in search(string, 'co.in', num = 2, stop = 2, pause = .5):
                 if "ratemyprofessors.com/ShowRatings" in j:
