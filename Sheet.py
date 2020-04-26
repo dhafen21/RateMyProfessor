@@ -24,6 +24,7 @@ class Sheet:
                   found = True
                   self.url_array.append(j)
                   self.name_array.append(sheet.cell_value(i,1))
+                  break
                 # else:
                 #   print("bad url: {}".format(j))
                 #   self.no_url.append(sheet.cell_value(i,1))
