@@ -18,17 +18,17 @@ class Sheet:
         sheet = file_rd.sheet_by_index(0)
         for i in range(1, sheet.nrows):
             string = "{} {} rate my professor".format(sheet.cell_value(i,1), self.school_name)
-            found = false
+            found = False
             for j in search(string, 'co.in', num = 2, stop = 2, pause = .5):
                 if "ratemyprofessors.com/ShowRatings" in j:
-                  found = true
+                  found = True
                   self.url_array.append(j)
                   self.name_array.append(sheet.cell_value(i,1))
                 # else:
                 #   print("bad url: {}".format(j))
                 #   self.no_url.append(sheet.cell_value(i,1))
                 #   # print("unable to find url for {}".format(sheet.cell_value(i,1)))
-            if not found:
+            if found == False:
                 self.no_url.append(sheet.cell_value(i,1))
         return self.url_array
 
