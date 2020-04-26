@@ -28,7 +28,7 @@ class Sheet:
                 #   print("bad url: {}".format(j))
                 #   self.no_url.append(sheet.cell_value(i,1))
                 #   # print("unable to find url for {}".format(sheet.cell_value(i,1)))
-            if found == false:
+            if not found:
                 self.no_url.append(sheet.cell_value(i,1))
         return self.url_array
 
