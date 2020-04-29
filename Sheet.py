@@ -30,8 +30,10 @@ class Sheet:
     @tenacity.retry(wait = tenacity.wait_fixed(1))
     def do_stuff(self, string):
         try:
+            print("In the try block")
             for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
                 if "ratemyprofessors.com/ShowRatings" in j:
+                    print("gets the url")
                   self.url_array.append(j)
                   self.name_array.append(sheet.cell_value(i,0))
                   break
