@@ -29,15 +29,19 @@ class Sheet:
 
     @retry(Exception, wait_fixed=2000)
     def do_stuff(self, string):
-        for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
-            if "ratemyprofessors.com/ShowRatings" in j:
-              self.url_array.append(j)
-              self.name_array.append(sheet.cell_value(i,0))
-              break
-            else:
-              print("bad url: {}".format(j))
-              self.no_url.append(sheet.cell_value(i,0))
-              # print("unable to find url for {}".format(sheet.cell_value(i,1)))
+        try:
+            for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
+                if "ratemyprofessors.com/ShowRatings" in j:
+                  self.url_array.append(j)
+                  self.name_array.append(sheet.cell_value(i,0))
+                  break
+                else:
+                  print("bad url: {}".format(j))
+                  self.no_url.append(sheet.cell_value(i,0))
+                  # print("unable to find url for {}".format(sheet.cell_value(i,1)))
+      except:
+          print("Too many attempts")
+          raise Exception("fail")
 
     def add_to_workbook(self, prof):
         file = openpyxl.load_workbook(self.path)
