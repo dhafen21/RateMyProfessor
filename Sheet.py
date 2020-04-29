@@ -43,7 +43,6 @@ class Sheet:
                   # print("unable to find url for {}".format(sheet.cell_value(i,1)))
         except:
           print("Too many attempts")
-          raise Exception("fail")
 
     def add_to_workbook(self, prof):
         file = openpyxl.load_workbook(self.path)
