@@ -24,18 +24,20 @@ class Sheet:
             a = sheet.cell_value(i,0).split(", ")
             string = "{} {} {} rate my professor".format(a[1], a[0], self.school_name)
             # string = "{} {} rate my professor".format(sheet.cell_value(i,0), self.school_name)
-            @retry(wait_fixed=2000)
-            def do_stuff():
-                for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
-                    if "ratemyprofessors.com/ShowRatings" in j:
-                      self.url_array.append(j)
-                      self.name_array.append(sheet.cell_value(i,0))
-                      break
-                    else:
-                      print("bad url: {}".format(j))
-                      self.no_url.append(sheet.cell_value(i,0))
-                      # print("unable to find url for {}".format(sheet.cell_value(i,1)))
+            do_stuff(string)
         return self.url_array
+
+    @retry(wait_fixed=2000)
+    def do_stuff(string):
+        for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
+            if "ratemyprofessors.com/ShowRatings" in j:
+              self.url_array.append(j)
+              self.name_array.append(sheet.cell_value(i,0))
+              break
+            else:
+              print("bad url: {}".format(j))
+              self.no_url.append(sheet.cell_value(i,0))
+              # print("unable to find url for {}".format(sheet.cell_value(i,1)))
 
     def add_to_workbook(self, prof):
         file = openpyxl.load_workbook(self.path)
