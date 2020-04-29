@@ -39,7 +39,7 @@ class Sheet:
                   print("bad url: {}".format(j))
                   self.no_url.append(sheet.cell_value(i,0))
                   # print("unable to find url for {}".format(sheet.cell_value(i,1)))
-      except:
+        except:
           print("Too many attempts")
           raise Exception("fail")
 
