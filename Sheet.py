@@ -23,7 +23,7 @@ class Sheet:
             a = sheet.cell_value(i,0).split(", ")
             string = "{} {} {} rate my professor".format(a[1], a[0], self.school_name)
             # string = "{} {} rate my professor".format(sheet.cell_value(i,0), self.school_name)
-            for j in search(string, 'co.in', num = 1, stop = 1, pause = .5):
+            for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
                 if "ratemyprofessors.com/ShowRatings" in j:
                   self.url_array.append(j)
                   self.name_array.append(sheet.cell_value(i,0))
