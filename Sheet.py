@@ -24,7 +24,7 @@ class Sheet:
             a = sheet.cell_value(i,0).split(", ")
             string = "{} {} {} rate my professor".format(a[1], a[0], self.school_name)
             # string = "{} {} rate my professor".format(sheet.cell_value(i,0), self.school_name)
-            do_stuff(string)
+            do_stuff(self, string)
         return self.url_array
 
     @retry(wait_fixed=2000)
