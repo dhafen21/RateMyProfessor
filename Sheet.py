@@ -16,6 +16,7 @@ class Sheet:
     def get_urls(self):
         file_rd = xlrd.open_workbook(self.path)
         sheet = file_rd.sheet_by_index(0)
+        print("Gets here")
         for i in range(1, sheet.nrows):
             print(sheet.cell_value(i,0))
             a = sheet.cell_value(i,0).split(", ")
