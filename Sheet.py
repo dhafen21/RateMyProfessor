@@ -28,7 +28,7 @@ class Sheet:
         return self.url_array
 
     @retry(wait_fixed=2000)
-    def do_stuff(string):
+    def do_stuff(self, string):
         for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
             if "ratemyprofessors.com/ShowRatings" in j:
               self.url_array.append(j)
