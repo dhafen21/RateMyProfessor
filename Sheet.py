@@ -1,7 +1,7 @@
 import xlrd
 from googlesearch import search
 import openpyxl
-from retrying import retry
+import tenacity
 
 class Sheet:
 
@@ -27,7 +27,7 @@ class Sheet:
             self.do_stuff(string)
         return self.url_array
 
-    @retry(Exception, wait_fixed=2000)
+    @tenacity.retry(wait = tenacity.wait_fixed(1))
     def do_stuff(self, string):
         try:
             for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
