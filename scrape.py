@@ -46,6 +46,7 @@ def scrape(url, driver):
             className.append(i.text)
     except:
         print("Unable to find the class name for {}".format(url))
+
     try:
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 huchqN'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kANgLI'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kUfTQq']"):
             quality.append(float(i.text))
@@ -57,6 +58,7 @@ def scrape(url, driver):
             difficulty.append(float(i.text))
     except:
         print("Unable to find the difficulty rating for {}".format(url))
+
     try:
         for i in driver.find_elements_by_xpath("//div[@class = 'Comments__StyledComments-dzzyvm-0 dEfjGB']"):
             comments.append(i.text)
