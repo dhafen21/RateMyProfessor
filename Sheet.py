@@ -23,7 +23,7 @@ class Sheet:
         index = 1
         for i in range(1, sheet.nrows):
             if i % 50 == 0:
-                print("Watiting 10 seconds for reset")
+                print("I need to wait a minute")
                 time.sleep(10)
             # print(sheet.cell_value(i,0))
             a = sheet.cell_value(i,0).split(", ")
