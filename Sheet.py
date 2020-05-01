@@ -20,12 +20,13 @@ class Sheet:
         print(sheet.cell_value(0,0))
         print("Gets here")
         for i in range(1, sheet.nrows):
+            index = 1
             # print(sheet.cell_value(i,0))
             a = sheet.cell_value(i,0).split(", ")
             string = "{} {} {} rate my professor".format(a[1], a[0], self.school_name)
             # string = "{} {} rate my professor".format(sheet.cell_value(i,0), self.school_name
             for j in search(string, 'co.in', num = 1, stop = 1, pause = .01):
-                print("2")
+                print(index)
                 if "ratemyprofessors.com/ShowRatings" in j:
                   self.url_array.append(j)
                   self.name_array.append(sheet.cell_value(i,0))
@@ -34,6 +35,7 @@ class Sheet:
                   print("bad url: {}".format(j))
                   self.no_url.append(sheet.cell_value(i,0))
                   # print("unable to find url for {}".format(sheet.cell_value(i,1)))
+            index+=1
         return self.url_array
 
 
