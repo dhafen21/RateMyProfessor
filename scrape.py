@@ -41,14 +41,27 @@ def scrape(url, driver):
     #     # print("hello")
     #     quality.append('i')
 
-    for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 gEcqZY']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 cNKhAZ']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 hBbYdP']"):
-        className.append(i.text)
-    for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 huchqN'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kANgLI'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kUfTQq']"):
-        quality.append(float(i.text))
-    for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 cKZySD']"):
-        difficulty.append(float(i.text))
-    for i in driver.find_elements_by_xpath("//div[@class = 'Comments__StyledComments-dzzyvm-0 dEfjGB']"):
-        comments.append(i.text)
+    try:
+        for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 gEcqZY']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 cNKhAZ']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 hBbYdP']"):
+            className.append(i.text)
+    except:
+        print("Unable to find the class name for {}".format(url))
+    try:
+        for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 huchqN'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kANgLI'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kUfTQq']"):
+            quality.append(float(i.text))
+    except:
+        print("Unable to find the qualtiy rating for {}".format(url))
+
+    try:
+        for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 cKZySD']"):
+            difficulty.append(float(i.text))
+    except:
+        print("Unable to find the difficulty rating for {}".format(url))
+    try:
+        for i in driver.find_elements_by_xpath("//div[@class = 'Comments__StyledComments-dzzyvm-0 dEfjGB']"):
+            comments.append(i.text)
+    except:
+        print("Unable to find the class name for {}".format(url))
 
     prof_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 cjgLEI']").text
 
