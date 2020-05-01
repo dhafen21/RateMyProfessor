@@ -22,7 +22,7 @@ class Sheet:
         print("Gets here")
         index = 1
         for i in range(1, sheet.nrows):
-            if i % 73 == 0:
+            if i % 50 == 0:
                 print("Watiting 10 seconds for reset")
                 time.sleep(10)
             # print(sheet.cell_value(i,0))
