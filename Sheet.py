@@ -36,9 +36,9 @@ class Sheet:
                   self.name_array.append(sheet.cell_value(i,0))
                   break
                 else:
-                  print("bad url: {}".format(j))
+                  # print("bad url: {}".format(j))
                   self.no_url.append(sheet.cell_value(i,0))
-                  # print("unable to find url for {}".format(sheet.cell_value(i,1)))
+                  print("unable to find url for {}".format(sheet.cell_value(i,1)))
             index+=1
         return self.url_array
 
