@@ -24,31 +24,19 @@ class Sheet:
             a = sheet.cell_value(i,0).split(", ")
             string = "{} {} {} rate my professor".format(a[1], a[0], self.school_name)
             # string = "{} {} rate my professor".format(sheet.cell_value(i,0), self.school_name)
-            self.do_stuff(string)
-        return self.url_array
-
-    @tenacity.retry(wait = tenacity.wait_fixed(1))
-    def do_stuff(self, string):
-        print("1")
-        try:
             for j in search(string, 'co.in', num = 1, stop = 1, pause = .7):
                 print("2")
                 if "ratemyprofessors.com/ShowRatings" in j:
-                  print("gets the url")
-                  print("3")
                   self.url_array.append(j)
-                  print("4")
                   self.name_array.append(sheet.cell_value(i,0))
-                  print("5")
                   break
                 else:
                   print("bad url: {}".format(j))
                   self.no_url.append(sheet.cell_value(i,0))
-                  print("6")
                   # print("unable to find url for {}".format(sheet.cell_value(i,1)))
-        except:
-          print("7")
-          print("Too many attempts")
+        return self.url_array
+
+
 
     def add_to_workbook(self, prof):
         file = openpyxl.load_workbook(self.path)
