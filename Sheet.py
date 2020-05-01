@@ -18,8 +18,6 @@ class Sheet:
     def get_urls(self):
         file_rd = xlrd.open_workbook(self.path)
         sheet = file_rd.sheet_by_index(0)
-        print(sheet.cell_value(0,0))
-        print("Gets here")
         index = 1
         for i in range(1, sheet.nrows):
             if i % 50 == 0:
@@ -38,7 +36,7 @@ class Sheet:
                 else:
                   # print("bad url: {}".format(j))
                   self.no_url.append(sheet.cell_value(i,0))
-                  print("unable to find url for {}".format(sheet.cell_value(i,1)))
+                  print("unable to find url for {}".format(sheet.cell_value(i,0)))
             index+=1
         return self.url_array
 
