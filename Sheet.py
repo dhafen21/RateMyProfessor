@@ -2,6 +2,7 @@ import xlrd
 from googlesearch import search
 import openpyxl
 import tenacity
+import time
 
 class Sheet:
 
@@ -21,6 +22,9 @@ class Sheet:
         print("Gets here")
         index = 1
         for i in range(1, sheet.nrows):
+            if i % 73 == 0:
+                print("Watiting 10 seconds for reset")
+                time.sleep(10)
             # print(sheet.cell_value(i,0))
             a = sheet.cell_value(i,0).split(", ")
             string = "{} {} {} rate my professor".format(a[1], a[0], self.school_name)
