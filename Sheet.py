@@ -19,8 +19,8 @@ class Sheet:
         sheet = file_rd.sheet_by_index(0)
         print(sheet.cell_value(0,0))
         print("Gets here")
+        index = 1
         for i in range(1, sheet.nrows):
-            index = 1
             # print(sheet.cell_value(i,0))
             a = sheet.cell_value(i,0).split(", ")
             string = "{} {} {} rate my professor".format(a[1], a[0], self.school_name)
