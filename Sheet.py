@@ -1,7 +1,6 @@
 import xlrd
 from googlesearch import search
 import openpyxl
-import tenacity
 import time
 
 class Sheet:
