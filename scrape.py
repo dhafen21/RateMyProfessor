@@ -65,8 +65,10 @@ def scrape(url, driver):
     except:
         print("Unable to find the class name for {}".format(url))
 
-    prof_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 cjgLEI']").text
-
+    try:
+        prof_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 cjgLEI']").text
+    except:
+        print("Unable to find the professor name for {}".format(url))
 
     # driver.quit()
     return className, quality, difficulty, comments, prof_name
