@@ -18,7 +18,8 @@ class Sheet:
         file_rd = xlrd.open_workbook(self.path)
         sheet = file_rd.sheet_by_index(0)
         index = 1
-        for i in range(1, sheet.nrows):
+        # for i in range(1, sheet.nrows):
+        for i in range(110,135):
             if i % 50 == 0:
                 print("I need to wait a minute")
                 time.sleep(10)

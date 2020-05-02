@@ -69,6 +69,7 @@ def scrape(url, driver):
     try:
         prof_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 cjgLEI']").text
     except:
+        prof_name = "Error Error"
         print("Unable to find the professor name for {}".format(url))
 
     # driver.quit()
