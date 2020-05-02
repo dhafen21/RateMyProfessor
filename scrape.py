@@ -36,6 +36,7 @@ def scrape(url, driver):
     quality = []
     difficulty = []
     comments = []
+    prof_name = None
 
     # for i in driver.find_elements_by_xpath("//*[text() = 'Quality']/following-sibling::text()"):
     #     # print("hello")
