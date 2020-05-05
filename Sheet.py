@@ -51,22 +51,22 @@ class Sheet:
 
             column = 1
             newSheet.cell(7,column).value = "Class Name"
-            for j in range(8,len(i.data.class_name)+2):
+            for j in range(8,len(i.data.class_name)+8):
                 newSheet.cell(j, column).value = i.data.class_name[j - 8]
 
             column+=1
             newSheet.cell(7,column).value = "Quality"
-            for j in range(8,len(i.data.class_name)+2):
+            for j in range(8,len(i.data.class_name)+8):
                 newSheet.cell(j, column).value = i.data.quality[j - 8]
 
             column+=1
             newSheet.cell(7,column).value = "Difficulty"
-            for j in range(8,len(i.data.class_name)+2):
+            for j in range(8,len(i.data.class_name)+8):
                 newSheet.cell(j, column).value = i.data.difficulty[j - 8]
 
             column = 20
             newSheet.cell(7,column).value = "Comment Text"
-            for j in range(8,len(i.data.class_name)+2):
+            for j in range(8,len(i.data.class_name)+8):
                 newSheet.cell(j, column).value = i.data.comments[j - 8]
 
             file.save(self.path)
