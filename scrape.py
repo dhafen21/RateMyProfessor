@@ -67,7 +67,7 @@ def scrape(url, driver):
         print("Unable to find the class name for {}".format(url))
 
     try:
-        prof_first_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 jeLOXk']").text
+        prof_first_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 jeLOXk']")
         # prof_last_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__LastNameWrapper-dowf0z-2 glXOHH']").text
         prof_name = "{}".format(prof_first_name)
 
