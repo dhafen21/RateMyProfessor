@@ -68,8 +68,8 @@ def scrape(url, driver):
 
     try:
         prof_first_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 jeLOXk']").text
-        prof_last_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__LastNameWrapper-dowf0z-2 glXOHH']").text
-        prof_name = "{} {}".format(prof_first_name, prof_last_name)
+        # prof_last_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__LastNameWrapper-dowf0z-2 glXOHH']").text
+        prof_name = "{}".format(prof_first_name)
 
     except:
         prof_name = "Error Error"
