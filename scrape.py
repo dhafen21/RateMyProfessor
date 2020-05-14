@@ -20,11 +20,13 @@ def scrape(url, driver):
     except:
         print("There was no 'agree to cookies' box")
 
+    iter = 0
     while True:
         try:
             button = driver.find_element_by_class_name("fwhQq")
             button.click()
-            print("clicked the button")
+            iter +=10
+            print("number added: {}".format(iter))
             time.sleep(.25)
         except:
             # print("Done clicking buttons")
