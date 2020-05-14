@@ -24,7 +24,7 @@ def scrape(url, driver):
         try:
             button = driver.find_element_by_class_name("fwhQq")
             button.click()
-            # print("clicked the button")
+            print("clicked the button")
             time.sleep(.25)
         except:
             # print("Done clicking buttons")
