@@ -20,15 +20,16 @@ class Sheet:
         index = 1
         for i in range(1, sheet.nrows):
         # for i in range(110,135):
-            if i % 50 == 0:
-                print("I need to wait a minute")
-                time.sleep(10)
+            # if i % 50 == 0:
+            #     print("I need to wait a minute")
+            #     time.sleep(10)
             # print(sheet.cell_value(i,0))
+            print("Searching for URL for {}".format(sheet.cell_value(i,0)))
             a = sheet.cell_value(i,0).split(", ")
             string = "{} {} {} rate my professor ShowRatings".format(a[1], a[0], self.school_name)
             # string = "{} {} rate my professor".format(sheet.cell_value(i,0), self.school_name
             for j in search(string, 'co.in', num = 1, stop = 1, pause = 1.5):
-                print(index)
+                # print(index)
                 if "ratemyprofessors.com/ShowRatings" in j:
                   self.url_array.append(j)
                   self.name_array.append(sheet.cell_value(i,0))
