@@ -17,8 +17,9 @@ def scrape(url, driver):
         agree = driver.find_element_by_class_name("cIvzTE")
         agree.click()
         # print("Agreed to cookies")
-    # except:
+    except:
         # print("There was no 'agree to cookies' box")
+        pass
 
     # iter = 0
     while True:
