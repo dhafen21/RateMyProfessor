@@ -65,6 +65,11 @@ class Sheet:
             for j in range(8,len(i.data.class_name)+8):
                 newSheet.cell(j, column).value = i.data.difficulty[j - 8]
 
+            column+=1
+            newSheet.cell(7,column).value = "Date"
+            for j in range(8,len(i.data.date)+8):
+                newSheet.cell(j, column).value = i.data.difficulty[j - 8]
+
             column = 20
             newSheet.cell(7,column).value = "Comment Text"
             for j in range(8,len(i.data.class_name)+8):

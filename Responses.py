@@ -5,3 +5,4 @@ class Responses:
         self.quality = []
         self.difficulty = []
         self.comments = []
+        self.date = []

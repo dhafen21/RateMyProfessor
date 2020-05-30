@@ -39,6 +39,7 @@ def scrape(url, driver):
     quality = []
     difficulty = []
     comments = []
+    dates = []
     prof_name = None
 
     # for i in driver.find_elements_by_xpath("//*[text() = 'Quality']/following-sibling::text()"):
@@ -66,6 +67,12 @@ def scrape(url, driver):
     try:
         for i in driver.find_elements_by_xpath("//div[@class = 'Comments__StyledComments-dzzyvm-0 dEfjGB']"):
             comments.append(i.text)
+    except:
+        print("Unable to find the class name for {}".format(url))
+
+    try:
+        for i in driver.find_elements_by_xpath("//div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
+            dates.append(i.text)
     except:
         print("Unable to find the class name for {}".format(url))
 
