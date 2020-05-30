@@ -74,7 +74,7 @@ def scrape(url, driver):
         for i in driver.find_elements_by_xpath("//div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
             dates.append(i.text)
     except:
-        print("Unable to find the class name for {}".format(url))
+        print("Unable to find the date for {}".format(url))
 
     try:
         prof_first_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 jeLOXk']/span").text
@@ -86,4 +86,4 @@ def scrape(url, driver):
         print("Unable to find the professor name for {}".format(url))
 
     # driver.quit()
-    return className, quality, difficulty, comments, prof_name
+    return className, quality, difficulty, comments, prof_name, dates
