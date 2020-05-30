@@ -72,6 +72,7 @@ def scrape(url, driver):
 
     try:
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 jbcWNz']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
+            print(i.text)
             dates.append(i.text)
     except:
         print("Unable to find the date for {}".format(url))
