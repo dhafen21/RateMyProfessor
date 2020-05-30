@@ -68,8 +68,7 @@ class Sheet:
             column+=1
             newSheet.cell(7,column).value = "Date"
             for j in range(8,len(i.data.date)+8):
-                # newSheet.cell(j, column).value = i.data.date[j - 8]
-                newSheet.cell(j, column).value = "Test"
+                newSheet.cell(j, column).value = i.data.date[j - 8]
 
 
             column = 20
