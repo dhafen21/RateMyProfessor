@@ -48,39 +48,50 @@ def scrape(url, driver):
     #     quality.append('i')
 
     try:
+        print("Getting class names")
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 gEcqZY']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 cNKhAZ']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 hBbYdP']"):
+            print(i.text)
             className.append(i.text)
     except:
         print("Unable to find the class name for {}".format(url))
 
     try:
+        print("Getting quality")
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 huchqN'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kANgLI'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kUfTQq']"):
+            print(i.text)
             quality.append(float(i.text))
     except:
         print("Unable to find the qualtiy rating for {}".format(url))
 
     try:
+        print("Getting Difficulty")
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 cKZySD']"):
+            print(i.text)
             difficulty.append(float(i.text))
     except:
         print("Unable to find the difficulty rating for {}".format(url))
 
     try:
+        print("getting comments")
         for i in driver.find_elements_by_xpath("//div[@class = 'Comments__StyledComments-dzzyvm-0 dEfjGB']"):
+            print(i.text)
             comments.append(i.text)
     except:
         print("Unable to find the class name for {}".format(url))
 
     try:
+        print("getting dates")
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 gEcqZY']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
             dates.append(i.text)
     except:
         print("Unable to find the date for {}".format(url))
 
     try:
+        print("getting professor name")
         prof_first_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 jeLOXk']/span").text
         prof_last_name = driver.find_element_by_xpath("//span[@class = 'NameTitle__LastNameWrapper-dowf0z-2 glXOHH']").text
         prof_name = "{} {}".format(prof_first_name, prof_last_name)
+        print(prof_name)
 
     except:
         prof_name = "Error Error"
