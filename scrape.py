@@ -49,7 +49,6 @@ def scrape(url, driver):
 
     try:
         print("Getting class names")
-        RatingHeader__StyledClass-sc-1dlkqw1-2 cElrQc
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 fLijLk']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 cElrQc']"):
             print(i.text)
             className.append(i.text)
