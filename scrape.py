@@ -25,6 +25,7 @@ def scrape(url, driver):
     while True:
         try:
             button = driver.find_element_by_class_name("fwhQq")
+            print("Clicked the button")
             button.click()
             iter +=10
             print("number added: {}".format(iter))
