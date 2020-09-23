@@ -48,41 +48,33 @@ def scrape(url, driver):
     #     quality.append('i')
 
     try:
-        print("Getting class names")
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 fLijLk']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 cElrQc']"):
-            print(i.text)
             className.append(i.text)
     except:
         print("Unable to find the class name for {}".format(url))
 
     try:
-        print("Getting quality")
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 iZENup'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 fBPVTR'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kMhQwk']"):
-            print(i.text)
             quality.append(float(i.text))
     except:
         print("Unable to find the qualtiy rating for {}".format(url))
 
     try:
-        print("Getting Difficulty")
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 ieQwTJ']"):
-            print(i.text)
             difficulty.append(float(i.text))
     except:
         print("Unable to find the difficulty rating for {}".format(url))
 
     try:
-        print("getting comments")
         for i in driver.find_elements_by_xpath("//div[@class = 'Rating__RatingInfo-sc-1rhvpxz-3 fFJUNb']/div[@class = 'Comments__StyledComments-dzzyvm-0 dvnRbr']"):
-            print(i.text)
             comments.append(i.text)
     except:
         print("Unable to find the class name for {}".format(url))
 
     try:
         print("getting dates")
-        # for i in driver.find_elements_by_xpath("//div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
-        for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
+        for i in driver.find_elements_by_xpath("//div[@id='root']/div[1]/div[1]/div[3]/div[4]/div[2]/div[1]/ul[2]/li/div[1]/div[1]/div[3]/div[1]/div[2]"):
+        # for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
             dates.append(i.text)
             print(i.text)
     except:
