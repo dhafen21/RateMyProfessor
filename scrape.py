@@ -78,11 +78,9 @@ def scrape(url, driver):
         print("Unable to find the date for {}".format(url))
 
     try:
-        print("getting professor name")
         prof_first_name = driver.find_element_by_xpath("//div[@class = 'NameTitle__Name-dowf0z-0 jeLOXk']/span").text
         prof_last_name = driver.find_element_by_xpath("//span[@class = 'NameTitle__LastNameWrapper-dowf0z-2 glXOHH']").text
         prof_name = "{} {}".format(prof_first_name, prof_last_name)
-        print(prof_name)
 
     except:
         prof_name = "Error Error"
