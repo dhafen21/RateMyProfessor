@@ -52,15 +52,12 @@ def scrape(url, driver):
         for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 fLijLk']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 cElrQc']"):
             print(i.text)
             className.append(i.text)
-        # for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 gEcqZY']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 cNKhAZ']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 hBbYdP']"):
-        #     print(i.text)
-        #     className.append(i.text)
     except:
         print("Unable to find the class name for {}".format(url))
 
     try:
         print("Getting quality")
-        for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 huchqN'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kANgLI'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kUfTQq']"):
+        for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 iZENup'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 fBPVTR'] | //div[@class = 'RatingValues__RatingValue-sc-6dc747-3 kMhQwk']"):
             print(i.text)
             quality.append(float(i.text))
     except:
@@ -68,7 +65,7 @@ def scrape(url, driver):
 
     try:
         print("Getting Difficulty")
-        for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 cKZySD']"):
+        for i in driver.find_elements_by_xpath("//div[@class = 'RatingValues__RatingValue-sc-6dc747-3 ieQwTJ']"):
             print(i.text)
             difficulty.append(float(i.text))
     except:
@@ -76,7 +73,7 @@ def scrape(url, driver):
 
     try:
         print("getting comments")
-        for i in driver.find_elements_by_xpath("//div[@class = 'Comments__StyledComments-dzzyvm-0 dEfjGB']"):
+        for i in driver.find_elements_by_xpath("//div[@class = 'Comments__StyledComments-dzzyvm-0 dvnRbr']"):
             print(i.text)
             comments.append(i.text)
     except:
@@ -84,7 +81,7 @@ def scrape(url, driver):
 
     try:
         print("getting dates")
-        for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 gEcqZY']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
+        for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
             dates.append(i.text)
     except:
         print("Unable to find the date for {}".format(url))
