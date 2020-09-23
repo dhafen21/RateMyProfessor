@@ -49,9 +49,13 @@ def scrape(url, driver):
 
     try:
         print("Getting class names")
-        for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 gEcqZY']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 cNKhAZ']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 hBbYdP']"):
+        RatingHeader__StyledClass-sc-1dlkqw1-2 cElrQc
+        for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 fLijLk']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 cElrQc']"):
             print(i.text)
             className.append(i.text)
+        # for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__StyledHeader-sc-1dlkqw1-0 gEcqZY']/div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 cNKhAZ']/div[@class = 'RatingHeader__StyledClass-sc-1dlkqw1-2 hBbYdP']"):
+        #     print(i.text)
+        #     className.append(i.text)
     except:
         print("Unable to find the class name for {}".format(url))
 
