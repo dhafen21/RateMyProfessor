@@ -81,8 +81,8 @@ def scrape(url, driver):
 
     try:
         print("getting dates")
-        for i in driver.find_elements_by_xpath("//div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
-        # for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
+        # for i in driver.find_elements_by_xpath("//div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
+        for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
             dates.append(i.text)
             print(i.text)
     except:
