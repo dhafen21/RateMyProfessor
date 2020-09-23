@@ -72,7 +72,7 @@ def scrape(url, driver):
         print("Unable to find the class name for {}".format(url))
 
     try:
-        print("getting dates")
+        print("getting dates1")
         for i in driver.find_elements_by_xpath("//div[@id='root']/div[1]/div[1]/div[3]/div[4]/div[2]/div[1]/ul[1]/li/div[1]/div[1]/div[3]/div[1]/div[2]"):
         # for i in driver.find_elements_by_xpath("//div[@class = 'RatingHeader__ClassInfoWrapper-sc-1dlkqw1-1 jxOApy']/div[@class = 'TimeStamp__StyledTimeStamp-sc-9q2r30-0 bXQmMr RatingHeader__RatingTimeStamp-sc-1dlkqw1-3 BlaCV']"):
             dates.append(i.text)
